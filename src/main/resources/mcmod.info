@@ -1,0 +1,16 @@
+[
+{
+  "modid": "glowstone_torch",
+  "name": "Glowstone Torch",
+  "description": "Glowstone on a Blaze Rod. Perfect.",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["voxelv"],
+  "credits": "McJty, for his cool tutorial site.",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
