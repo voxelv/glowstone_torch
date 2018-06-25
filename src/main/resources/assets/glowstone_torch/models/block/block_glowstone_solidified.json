@@ -1,0 +1,6 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "glowstone_torch:blocks/block_glowstone_solidified"
+  }
+}

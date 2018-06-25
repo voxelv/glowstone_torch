@@ -1,0 +1,10 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "model": "glowstone_torch:block_glowstone_solidified"
+  },
+  "variants": {
+    "normal": {"model": "glowstone_torch:block_glowstone_solidified"},
+    "inventory": [{}]
+  }
+}
