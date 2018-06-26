@@ -2,15 +2,18 @@ package com.voxelv.glowstone_torch.objects.blocks;
 
 import com.voxelv.glowstone_torch.GlowstoneTorch;
 import com.voxelv.glowstone_torch.init.BlockInit;
+import com.voxelv.glowstone_torch.init.ItemInit;
 import com.voxelv.glowstone_torch.util.IHasModel;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.material.Material;
+import net.minecraft.block.state.BlockFaceShape;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemBlock;
 import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.Mirror;
@@ -44,6 +47,7 @@ public class BlockGlowstoneTorch extends BlockDirectional implements IHasModel {
         setCreativeTab(CreativeTabs.MATERIALS);
 
         BlockInit.BLOCKS.add(this);
+        ItemInit.ITEMS.add(new ItemBlock(this).setRegistryName(this.getRegistryName()));
     }
 
     /*******************************************************************************************************************
@@ -112,6 +116,37 @@ public class BlockGlowstoneTorch extends BlockDirectional implements IHasModel {
     }
 
     @Override
+    public void neighborChanged(IBlockState state, World worldIn, BlockPos pos, Block blockIn, BlockPos fromPos)
+    {
+        this.onNeighborChangeInternal(worldIn, pos, state);
+    }
+
+    protected boolean onNeighborChangeInternal(World worldIn, BlockPos pos, IBlockState state)
+    {
+        if (!this.checkForDrop(worldIn, pos, state))
+        {
+            return true;
+        }
+        else
+        {
+            EnumFacing enumfacing = (EnumFacing)state.getValue(FACING);
+            EnumFacing enumfacing1 = enumfacing.getOpposite();
+            BlockPos blockpos = pos.offset(enumfacing1);
+
+            if (worldIn.getBlockState(blockpos).getBlockFaceShape(worldIn, blockpos, enumfacing) != BlockFaceShape.SOLID)
+            {
+                this.dropBlockAsItem(worldIn, pos, state, 0);
+                worldIn.setBlockToAir(pos);
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+    }
+
+    @Override
     public boolean canPlaceBlockAt(World worldIn, BlockPos pos)
     {
         for (EnumFacing enumfacing : EnumFacing.values())
@@ -129,6 +164,27 @@ public class BlockGlowstoneTorch extends BlockDirectional implements IHasModel {
     {
         BlockPos blockpos = pos.offset(direction);
         return worldIn.getBlockState(blockpos).isSideSolid(worldIn, blockpos, direction.getOpposite());
+    }
+
+    @Override
+    public IBlockState getStateForPlacement(World worldIn, BlockPos pos, EnumFacing facing, float hitX, float hitY, float hitZ, int meta, EntityLivingBase placer)
+    {
+        if (this.canPlaceBlockAt(worldIn, pos))
+        {
+            return this.getDefaultState().withProperty(FACING, facing);
+        }
+        else
+        {
+            for (EnumFacing enumfacing : EnumFacing.Plane.HORIZONTAL)
+            {
+                if (this.canPlaceBlockAt(worldIn, pos))
+                {
+                    return this.getDefaultState().withProperty(FACING, enumfacing);
+                }
+            }
+
+            return this.getDefaultState();
+        }
     }
 
     /*******************************************************************************************************************
