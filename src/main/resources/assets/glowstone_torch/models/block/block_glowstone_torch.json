@@ -1,0 +1,7 @@
+{
+  "parent": "glowstone_torch:block/cube_torch",
+  "textures": {
+    "torch": "glowstone_torch:items/block_glowstone_torch",
+    "cube": "minecraft:blocks/glowstone"
+  }
+}

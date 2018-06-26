@@ -1,0 +1,15 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "model": "glowstone_torch:block_glowstone_torch"
+  },
+  "variants": {
+    "normal":       { "model": "glowstone_torch:block_glowstone_torch" },
+    "facing=up":    { "model": "glowstone_torch:block_glowstone_torch" },
+    "facing=down":  { "model": "glowstone_torch:block_glowstone_torch", "x": 180},
+    "facing=east":  { "model": "glowstone_torch:block_glowstone_torch", "x": 90, "y": 90  },
+    "facing=south": { "model": "glowstone_torch:block_glowstone_torch", "x": 90, "y": 180 },
+    "facing=west":  { "model": "glowstone_torch:block_glowstone_torch", "x": 90, "y": 270 },
+    "facing=north": { "model": "glowstone_torch:block_glowstone_torch", "x": 90 }
+  }
+}
