@@ -1,7 +1,9 @@
 package com.voxelv.glowstone_torch;
 
 import com.voxelv.glowstone_torch.proxy.CommonProxy;
+import com.voxelv.glowstone_torch.tabs.GlowstoneTorchTab;
 import com.voxelv.glowstone_torch.util.Reference;
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -15,6 +17,8 @@ import org.apache.logging.log4j.Logger;
         dependencies =
                 "after:Forge@[14.22.0.2464,)", useMetadata = true)
 public class GlowstoneTorch {
+
+    public static final CreativeTabs glowstone_torch_tab = new GlowstoneTorchTab();
 
     @SidedProxy(clientSide = "com.voxelv.glowstone_torch.proxy.ClientProxy", serverSide = "com.voxelv.glowstone_torch.proxy.ServerProxy")
     public static CommonProxy proxy;

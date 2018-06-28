@@ -1,0 +1,6 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "glowstone_torch:items/leggings_glowstone_solidified"
+  }
+}

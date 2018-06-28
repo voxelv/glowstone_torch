@@ -44,7 +44,7 @@ public class BlockGlowstoneTorch extends BlockDirectional implements IHasModel {
         this.name = name;
         setRegistryName(this.name);
         setUnlocalizedName(this.name);
-        setCreativeTab(CreativeTabs.MATERIALS);
+        setCreativeTab(GlowstoneTorch.glowstone_torch_tab);
 
         BlockInit.BLOCKS.add(this);
         ItemInit.ITEMS.add(new ItemBlock(this).setRegistryName(this.getRegistryName()));
@@ -175,14 +175,6 @@ public class BlockGlowstoneTorch extends BlockDirectional implements IHasModel {
         }
         else
         {
-            for (EnumFacing enumfacing : EnumFacing.Plane.HORIZONTAL)
-            {
-                if (this.canPlaceBlockAt(worldIn, pos))
-                {
-                    return this.getDefaultState().withProperty(FACING, enumfacing);
-                }
-            }
-
             return this.getDefaultState();
         }
     }

@@ -1,5 +1,17 @@
 
 
-itemGroup.tabGlowstoneTorch=Glowstone Torch
+itemGroup.glowstone_torch=Glowstone Torch
 item.dust_glowstone_tiny.name=Tiny Glowstone Dust
 tile.block_glowstone_solidified.name=Solidified Glowstone
+
+
+item.axe_glowstone_solidified.name=Solidified Glowstone Axe
+item.hoe_glowstone_solidified.name=Solidified Glowstone Hoe
+item.pickaxe_glowstone_solidified.name=Solidified Glowstone Pickaxe
+item.shovel_glowstone_solidified.name=Solidified Glowstone Shovel
+item.sword_glowstone_solidified.name=Solidified Glowstone Sword
+
+item.helmet_glowstone_solidified.name=Solidified Glowstone Helmet
+item.chestplate_glowstone_solidified.name=Solidified Glowstone Chestplate
+item.leggings_glowstone_solidified.name=Solidified Glowstone Leggings
+item.boots_glowstone_solidified.name=Solidified Glowstone Boots

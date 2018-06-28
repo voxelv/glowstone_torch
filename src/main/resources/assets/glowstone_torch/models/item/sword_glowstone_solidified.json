@@ -1,0 +1,6 @@
+{
+  "parent": "item/handheld",
+  "textures": {
+    "layer0": "glowstone_torch:items/sword_glowstone_solidified"
+  }
+}
