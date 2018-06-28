@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+
+  "pattern": [
+    ".G.",
+    "GGG",
+    ".G."
+  ],
+  "key":
+  {
+    "G": {"item": "minecraft:glowstone"},
+    ".": {"item": "glowstone_torch:dust_glowstone_tiny"}
+  },
+  "result": { "item": "glowstone_torch:block_glowstone_solidified", "count": 5}
+}

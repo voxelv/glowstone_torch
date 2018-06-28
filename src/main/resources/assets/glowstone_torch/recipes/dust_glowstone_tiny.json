@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:crafting_shaped",
+
+  "pattern": [ "d" ],
+  "key":
+  {
+    "d": {"item": "minecraft:glowstone_dust"}
+  },
+  "result": { "item": "glowstone_torch:dust_glowstone_tiny", "count": 4}
+}

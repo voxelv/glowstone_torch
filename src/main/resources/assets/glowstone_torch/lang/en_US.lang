@@ -3,6 +3,7 @@
 itemGroup.glowstone_torch=Glowstone Torch
 item.dust_glowstone_tiny.name=Tiny Glowstone Dust
 tile.block_glowstone_solidified.name=Solidified Glowstone
+tile.block_glowstone_torch.name=Glowstone Torch
 
 
 item.axe_glowstone_solidified.name=Solidified Glowstone Axe

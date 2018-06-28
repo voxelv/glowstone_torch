@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+
+  "pattern": [
+    "B",
+    "/"
+  ],
+  "key":
+  {
+    "B": {"item": "glowstone_torch:block_glowstone_solidified"},
+    "/": {"item": "minecraft:blaze_rod"}
+  },
+  "result": { "item": "glowstone_torch:block_glowstone_torch", "count": 1}
+}
